@@ -55,8 +55,10 @@ with st.form(key="vendor_form"):
     country = st.text_input(label="answer7 :") 
     st.subheader("Population")
     population = st.number_input(label="answer8 :",min_value=0)
-    age = st.slider("Years in Business", 0, 50, 5)
-    additional_info = st.text_area(label="Additional Notes")
+    st.subheader("Years in Business")
+    age = st.slider("answer9 :", 0, 50, 5)
+    st.subheader("Additional Notes")
+    additional_info = st.text_area(label="answer10 :")
 
     # Mark mandatory fields
     st.markdown("**required*")
