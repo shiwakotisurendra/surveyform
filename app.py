@@ -64,7 +64,7 @@ with st.form(key="vendor_form"):
     answer5= st.text_area(label="answer5 :")
     st.subheader("Products Offered")
     qualification = st.radio("answer6:",options=qualification1)
-    print(qualification)
+    # print(qualification)
     st.subheader("Region/City")
     country = st.text_input(label="answer7 :") 
     st.subheader("Population")
