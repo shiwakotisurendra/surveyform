@@ -105,8 +105,16 @@ with st.form(key="vendor_form"):
             # Refresh and display the updated DataFrame
             # updated_df = read_data(conn)
             # st.dataframe(updated_df)
-hide_pages(
+
+
+show_pages(
     [
-        Page("pages/monitor.py"),
-     ]
+        Page("app.py", "Home", "🏠"),
+        Page("monitor.py", "monitor"),
+    ]
+)
+
+
+hide_pages(
+    ["monitor"]
 )
