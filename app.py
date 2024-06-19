@@ -110,7 +110,7 @@ with st.form(key="vendor_form"):
 show_pages(
     [
         Page("app.py", "Home", "🏠"),
-        Page("monitor.py", "monitor"),
+        Page("pages/monitor.py", "monitor"),
     ]
 )
 
