@@ -30,6 +30,13 @@ existing_data = read_data(conn)
 # st.dataframe(existing_data)
 
 # Questions and options setup
+questions = [
+    "Welche Fachbereiche der Stadt Kerpen könnten von dem InfoTool zur Klimaanpassung profitieren und dieses auch nutzen?",
+    "Welche Abteilung soll der Ansprechpartner für das InfoTool zur Klimaanpassung sein?",
+    "Sollte das InfoTool auch für andere Nutzer/Städtepartner zur Verfügung stehen, z.B. Wasser-/Umweltverbände, Bürgerinitiativen, Universitäten und Schulen?",
+    "Was sind Ihrer Meinung nach die größten Herausforderungen/Gefahren in Bezug auf den Klimawandel für die Stadt Kerpen?",
+    "Welche sind Ihrer Meinung nach die wichtigsten Sektoren, die sich in der Stadt Kerpen mit Klimaanpassung befassen, z.B. Klima-/Umweltabteilungen, Stadtplaner, Wasserwirtschaft, Landwirtschaft, Bergbau, Industrie, Rettungsdienste, usw.?",
+]
 address1 = ["Statistics","Geodata Management","Climate Protection","Environmental Monitoring"]
 qualification1 = [
     "Electronics",
@@ -80,14 +87,14 @@ with st.form(key="vendor_form"):
             st.stop()
         else:
             # Prepare the vendor data for insertion
-            vendor_data = (name, answer, answer2, answer3, answer4, answer5,
+            vendor_data = (name, questions[0], answer, questions[1], answer2, questions[2], answer3 , questions[3], answer4, questions[4], answer5,
                            ", ".join(qualification), country, population, age, additional_info)
 
             # Insert new vendor into the SQLite database
             c.execute('''
-                      INSERT INTO population (name, answer, answer2, answer3, answer4, answer5, 
+                      INSERT INTO population (name, address, answer, address2, answer2, address3, answer3, address4, answer4, address5, answer5, 
                       qualification, country, population, age, additional)
-                      VALUES (?,?,?,?,?,?,?,?,?,?,?)
+                      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
                       ''', (vendor_data))
             conn.commit()
 
