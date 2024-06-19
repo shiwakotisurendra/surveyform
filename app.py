@@ -36,8 +36,8 @@ a= st.chat_input()
 
 # Onboarding New Vendor Form
 with st.form(key="vendor_form"):
-    
-    name = st.text_input(label="Department*")
+    st.subheader("Department*")
+    name = st.text_input(label="answer:")
     # Assemble questions and input fields
     address = st.subheader("Q1. Welche Fachbereiche der Stadt Kerpen könnten von dem InfoTool zur Klimaanpassung profitieren und dieses auch nutzen?")#st.selectbox("question1*", options=address1, index=None)
     answer= st.radio('answer1:',['A','B','C'])#st.text_area(label="answer1")
