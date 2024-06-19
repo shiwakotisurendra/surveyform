@@ -30,9 +30,15 @@ existing_data = read_data(conn)
 # st.dataframe(existing_data)
 
 # Questions and options setup
-address1 = ["A,B,C"]
-qualification1 = ['1','2','3']
-a= st.chat_input()
+address1 = ["Statistics","Geodata Management","Climate Protection","Environmental Monitoring"]
+qualification1 = [
+    "Electronics",
+    "Apparel",
+    "Groceries",
+    "Software",
+    "Other",
+]
+# a= st.chat_input()
 
 # Onboarding New Vendor Form
 with st.form(key="vendor_form"):
