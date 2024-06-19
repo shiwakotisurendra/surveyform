@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import sqlite3
+from st_pages import hide_pages, show_pages, Page
 
 st.set_page_config(layout='wide')
 st.title("Geoinformation feedback Portal")
@@ -104,3 +105,8 @@ with st.form(key="vendor_form"):
             # Refresh and display the updated DataFrame
             # updated_df = read_data(conn)
             # st.dataframe(updated_df)
+hide_pages(
+    [
+        Page("pages/monitor.py"),
+     ]
+)
